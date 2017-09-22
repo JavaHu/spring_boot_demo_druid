@@ -2,9 +2,9 @@ server:
   port: 8080
   #数据库连接
 spring:
-  profiles:
   active: dev #开发环境
-  datasource: #mysql连接信息
+  dev: #开发环境
+    datasource: #mysql连接信息
       type: com.alibaba.druid.pool.DruidDataSource
       url: jdbc:mysql://127.0.0.1:3306/bigdata?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false
       username: root

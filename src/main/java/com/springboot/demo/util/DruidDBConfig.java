@@ -35,12 +35,12 @@ public class DruidDBConfig implements EnvironmentAware {
     @Override
     public void setEnvironment(Environment environment) {
         this.environment = environment;
-        this.propertyResolver = new RelaxedPropertyResolver(environment, "spring.datasource.");
+        this.propertyResolver = new RelaxedPropertyResolver(environment, "spring.dev.datasource.");
     }
 
 
     @Bean
-    public ServletRegistrationBean druidStatViewServlet() {
+    public ServletRegistrationBean druidStatViewServlet() { 
         ServletRegistrationBean registrationBean = new ServletRegistrationBean(new StatViewServlet(), "/druid/*");
         registrationBean.addInitParameter("allow", "127.0.0.1");//白名单
         registrationBean.addInitParameter("deny", "192.168.31.234");//黑名单
